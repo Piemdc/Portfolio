@@ -37,11 +37,15 @@ module.exports = {
         'error' : '#ff5724'
       },
       fontFamily : {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans]
+        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        title: ['Yeseva', ...defaultTheme.fontFamily.sans]
+      },
+      backdropBlur: {
+        xs: '1px',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'head': "url('../public/images/bg6img1.png')",
+        'about': "url('../public/images/bg6img2.png')",
       },
     },
   },

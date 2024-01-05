@@ -3,11 +3,42 @@
 @tailwind utilities;
 
 
-    @font-face {
-        font-family: "Nunito";
+@font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(../public/fonts/NunitoSans.woff2) format("woff2");
+}
+@font-face {
+        font-family: "Yeseva";
         font-style: normal;
         font-weight: 100 900;
-        font-display: optional;
-        src: url(../public/fonts/NunitoSans.woff2) format("woff2");
+        font-display: swap;
+        src: url(../public/fonts/YesevaOne-Regular.woff2) format("woff2");
+    }
+
+@layer base {
+    html{
+        scroll-behavior: smooth;
 
     }
+}
+
+@layer components{
+    .hero,
+    .about{
+        @apply bg-cover bg-no-repeat bg-center bg-[center_center] transition duration-300;
+    }
+    .hero{
+        background-image:linear-gradient(rgba(75, 73, 75, 0), rgba(0, 0, 0, 0.77)), url(../public/images/bg6img1.png)
+    }
+    .about{
+        background-image:linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0)), url(../public/images/bg6img2.png)
+    }
+}
+
+.button{
+    @apply uppercase font-title text-primary-content font-bold text-2xl py-2 px-4 ;
+    @apply transition duration-500 ease-in-out;
+}
