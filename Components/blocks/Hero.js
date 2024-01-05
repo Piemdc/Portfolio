@@ -2,10 +2,10 @@ import Link from "next/link";
 import Arrow from "@/public/images/310628.svg"
 import Image from "next/image";
 
-export default function Hero({className}){
+export default function Hero(){
 
     return (
-        <section id={'hero'} className={'px-10 w-full text-primary-content ' + className}>
+        <section id={'hero'} className={'px-10 w-full text-primary-content' }>
             <div className={'lg:grid grid-cols-2 min-h-screen font-sans uppercase pt-[60px] lg:pt-0'}>
                 <div className={'lg:col-span-1 self-center font-black tracking-tighter lg:text-right lg:pr-10 border-r-2 relative'}>
                     <span className={'absolute lowercase font-title top-[-1em] right-10 text-secondary-focus lg:text-4xl'}>Junior</span>
@@ -13,8 +13,7 @@ export default function Hero({className}){
                 </div>
                 <div className={'lg:col-span-1 text-3xl self-center p-10 font-bold text-left relative'}>
                     <p>Jeune développeur</p>
-                    <p>basé en france, récemment diplômé d'Hetic, j'ai éffectué une reconversion professionnelle du
-                        secteur de l'imprimerie vers celui de la programmation</p>
+                    <p>basé en France,diplômé d'Hetic, en contrat chez <Link href={'https://opus.paris'} target={'_blank'} role={'link'} aria-label={'opus'} className={'text-accent hover:text-accent-focus'}>Opus</Link>. J'aime l'art et la musique, les jeux vidéos et la nature.</p>
 
                     <div className={'lg:absolute lg:bottom-[-2em] lg:right-40'}>
                         <Link href={'#contact'} className="button flex flex-row">
