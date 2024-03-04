@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin': 'spin 10s linear infinite',
+      },
       colors : {
         'primary' : '#000000',
         'primary-focus' : '#9c99a3',
@@ -44,8 +47,6 @@ module.exports = {
         xs: '1px',
       },
       backgroundImage: {
-        'head': "url('../public/images/bg6img1.png')",
-        'about': "url('../public/images/bg6img2.png')",
       },
     },
   },

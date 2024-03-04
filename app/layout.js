@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
     <html lang="fr">
      <Head/>
      <ScrollPositionProvider>
-     <body className={'bg-neutral antialiased relative'}>
+     <body className={'antialiased relative'}>
      <DynamicBgBody/>
-       <Header/>
+     <Header/>
         {children}
      </body>
      </ScrollPositionProvider>

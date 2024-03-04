@@ -23,7 +23,7 @@ export default function Header(options){
     return (
         <header id={'header'} role={'banner'} className={'h-[60px] w-full px-10 flex flex-row justify-between text-primary-content font-sans fixed z-50 border-b-[1px] animate duration-700 ease-in-out '+ (isScrolled?'bg-primary/50 backdrop-blur-xs':'')}>
             <div className={'flex flex-row items-center gap-4'}>
-                <a href={'#'} className={'font-title'}>
+                <a href={'/'} className={'font-title'}>
                     Piemdc
                 </a>
                 <div className={'uppercase font-bold'}>
