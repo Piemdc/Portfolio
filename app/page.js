@@ -2,10 +2,9 @@
 
 import Hero from "@/Components/blocks/Hero";
 import About from "@/Components/blocks/About";
-import Contact from "@/Components/blocks/Contact";
-import dynamic from "next/dynamic";
 import {useState} from "react";
 import Reals from "@/Components/blocks/Reals";
+import useLockBodyScroll from "@/utils/methods/useLockBodyScrolls";
 
 
 
@@ -15,6 +14,7 @@ export default function Home() {
     const changeShowReals =(e) =>{
         setShowReals(!showReals);
     }
+    useLockBodyScroll(showReals);
 
     // @todo create a provider for this state
 
