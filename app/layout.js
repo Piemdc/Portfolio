@@ -1,6 +1,8 @@
 import './globals.css'
 import Header from "@/Components/blocks/Header";
 import Head from "@/Components/atoms/head";
+import ScrollPositionProvider from "@/utils/providers/ScrollPositionProvider";
+import dynamic from "next/dynamic";
 
 
 export const metadata = {
@@ -9,13 +11,20 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  return (
+
+    const DynamicBgBody = dynamic(() => import("@/Components/atoms/BgBody"), { ssr: false });
+
+    return (
     <html lang="fr">
      <Head/>
-    <body className={'bg-neutral antialiased'}>
-      <Header/>
-      {children}
-      </body>
+     <ScrollPositionProvider>
+     <body className={'antialiased relative'}>
+     <DynamicBgBody/>
+     <Header/>
+        {children}
+     </body>
+     </ScrollPositionProvider>
+
     </html>
   )
 }

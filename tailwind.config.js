@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin': 'spin 10s linear infinite',
+      },
       colors : {
         'primary' : '#000000',
         'primary-focus' : '#9c99a3',
@@ -37,11 +40,13 @@ module.exports = {
         'error' : '#ff5724'
       },
       fontFamily : {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans]
+        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        title: ['Yeseva', ...defaultTheme.fontFamily.sans]
+      },
+      backdropBlur: {
+        xs: '1px',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
