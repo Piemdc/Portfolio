@@ -33,7 +33,7 @@ export default function Header(options){
             <nav className={'flex flex-row items-center'}>
                <ul className={'flex flex-row gap-2'}>
                    <li className={'hidden lg:block'}><Link role={'link'} href="#about">à propos</Link></li>
-                   <li><Link role={'link'} href="#">contact</Link></li>
+                   <li><Link role={'link'} href="mailto:magniendcpierre@gmail.com">contact</Link></li>
                </ul>
             </nav>
         </header>
