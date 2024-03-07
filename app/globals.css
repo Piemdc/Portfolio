@@ -4,7 +4,7 @@
 
 
 :root {
-   --windowsize : calc(100lvh - 60px)
+   --windowsize : calc(100dvh - 60px)
 }
 
 @font-face {

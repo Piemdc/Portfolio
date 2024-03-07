@@ -21,7 +21,7 @@ export default function Home() {
     // @todo create a provider for this state
 
     return (
-    <main className="overflow-hidden flex min-h-lvh flex-col items-center justify-between relative">
+    <main className="overflow-hidden flex min-h-dvh flex-col items-center justify-between relative">
         <Hero/>
         <About />
         <Reals showReals={showReals} setShowReals={setShowReals} changeShowReals={changeShowReals}/>
