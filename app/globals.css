@@ -44,6 +44,18 @@
     .reals{
         background-image:linear-gradient(rgba(75, 73, 75, 0), rgba(0, 0, 0, 0.77)), url(../public/images/bg6img2.png)
     }
+
+    .sideways {
+        &::before{
+            content:'﹤';
+            position: absolute;
+            font-size: 0.5em;
+            left:-1rem;
+            top:calc(50%);
+            transform:scaleY(6);
+            @apply animate-pulse;
+        }
+    }
 }
 
 .button{
