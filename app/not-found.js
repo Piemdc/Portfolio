@@ -12,7 +12,7 @@ export default function FourOhFour() {
                 </div>
 
             <div className={"col-span-1 h-[170px] bg-black/50 self-center p-10 font-bold text-left relative flex flex-col items-start justify-center"}>
-                <p className={'lg:text-3xl'}>Cette pas n'existe pas</p>
+                <p className={"lg:text-3xl"}>Cette pas n&apos;existe pas</p>
                 <a href="/" className={'lowercase underline text-accent hover:text-accent-focus'}> Retourner sur la page principale</a>
             </div>
             </div>
