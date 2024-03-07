@@ -49,6 +49,11 @@
         background-image:linear-gradient(rgba(75, 73, 75, 0), rgba(0, 0, 0, 0.77)), url(../public/images/bg6img4.png)
     }
 
+    #reals{
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+
+    }
+
     .sideways {
         &::before{
             content:'﹤';
