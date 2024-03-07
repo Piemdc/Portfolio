@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero(){
 
     return (
-        <section id={"hero"} className={"px-10 pt-[60px] lg:pt-0 w-full text-primary-content" }>
+        <section id={"hero"} className={"px-10 pt-[60px] lg:pt-0 w-full min-h-screen text-primary-content" }>
             <div className={"lg:grid grid-cols-2 lg:min-h-screen font-sans uppercase pt-[60px] lg:pt-0"}>
                 <div className={"lg:col-span-1 self-center font-black tracking-tighter lg:text-right mb-10 lg:mb-0 lg:pr-10 lg:border-r-2 relative"}>
                     <span className={"absolute lowercase font-title top-[-1em] lg:right-10 text-secondary-focus lg:text-4xl"}>Junior</span>
