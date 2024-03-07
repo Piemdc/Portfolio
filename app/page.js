@@ -6,6 +6,7 @@ import {useState} from "react";
 import Reals from "@/Components/blocks/Reals";
 import useLockBodyScroll from "@/utils/methods/useLockBodyScrolls";
 import RealsSide from "@/Components/Molecules/Reals-side";
+import Stack from "@/Components/blocks/Stack";
 
 
 
@@ -25,6 +26,7 @@ export default function Home() {
         <About />
         <Reals showReals={showReals} setShowReals={setShowReals} changeShowReals={changeShowReals}/>
         <RealsSide changeShowReals={changeShowReals}/>
+        <Stack/>
         {/*<Contact/>*/}
     </main>
   )
