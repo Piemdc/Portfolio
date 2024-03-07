@@ -6,7 +6,7 @@ export default function BgBody() {
     const currentIndex = useContext(ScrollPositionContext)
     console.log(currentIndex)
     return(
-        <div id={'bgbody'} className={'fixed top-0 h-dvh w-full'}>
+        <div id={'bgbody'} className={'fixed top-0 h-vh w-full'}>
             <div className={'hero w-full h-full absolute opacity-1 transition-opacity duration-100 ease-in-out'}></div>
             <div className={'about bg-[60%] lg:bg-center w-full h-full absolute opacity-0 transition-opacity'} style={{
                 opacity: currentIndex.index === 0 && currentIndex.percent > 0

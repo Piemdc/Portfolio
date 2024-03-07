@@ -4,11 +4,11 @@
 
 
 :root {
-   --windowsize : calc(100dvh - 60px)
+   --windowsize : calc(100vh - 60px)
 }
 
 body {
-    padding-bottom: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 @font-face {
