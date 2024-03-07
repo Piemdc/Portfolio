@@ -1,5 +1,5 @@
 import JS from  '@/public/images/stack/JS.svg'
-import PHP from  '@/public/images/stack/PHP.svg'
+import PHP from  '@/public/images/stack/php.svg'
 import REACT from  '@/public/images/stack/react.svg'
 import WORDPRESS from  '@/public/images/stack/wordpress.svg'
 import NEXT from  '@/public/images/stack/NEXT.svg'
