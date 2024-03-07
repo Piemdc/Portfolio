@@ -6,7 +6,7 @@ export default function RealsSide({changeShowReals}){
     const currentIndex = useContext(ScrollPositionContext)
 
     return (
-                <button className={`${currentIndex.index >= 1 || (currentIndex.index === 0 && currentIndex.percent > 50) ? 'opacity-1' : 'opacity-0'} transition-opacity duration-700 z-30 flex justify-center gap-4 items-center fixed right-0 top-1/3  hover:scale-105 cursor-pointer`}
+                <button className={`${currentIndex.index >= 1 || (currentIndex.index === 0 && currentIndex.percent > 50) ? ' translate-x-0' : 'translate-x-[55px]'} transition-transform duration-700 z-30 flex justify-center gap-4 items-center fixed right-0 top-1/3  hover:scale-105 cursor-pointer`}
                         onClick={changeShowReals}>
                     <div className={" flex flex-col justify-start text-primary-content bg-neutral/25 backdrop-blur lower sideways border-dashed border-black rounded-l-lg  border-l-[1px] border-b-[1px] border-t-[1px] px-3 py-4"}>
                         <p>S</p>
