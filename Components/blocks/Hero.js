@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Arrow from "@/public/images/310628.svg"
-import Image from "next/image";
+import EMAIL from "@/public/images/email.svg"
 
 export default function Hero(){
 
@@ -18,7 +17,7 @@ export default function Hero(){
                     <div className={"lg:absolute lg:bottom-[-2em] lg:right-40"}>
                         <Link href={"mailto:magniendcpierre@gmail.com"} className="button flex flex-row justify-end items-center gap-2">
                             <span className={'font-sans text-sm'}>contactez-moi</span>
-                            <span className={"w-[30px] h-[50px] text-primary-content"}><Arrow/></span>
+                            <span className={"w-[15px] text-primary-content"}><EMAIL/></span>
                         </Link>
                     </div>
                 </div>
