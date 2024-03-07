@@ -16,9 +16,9 @@ export default function Hero(){
                     <p className={'mb-5 lg:mb-0'}>basé en France,diplômé d&apos;Hetic, en contrat chez <Link href={"https://opus.paris"} target={"_blank"} role={"link"} aria-label={"opus"} className={"text-accent hover:text-accent-focus"}>Opus</Link>. J&apos;aime l&apos;art et la musique, les jeux vidéos et la nature.</p>
 
                     <div className={"lg:absolute lg:bottom-[-2em] lg:right-40"}>
-                        <Link href={"mailto:magniendcpierre@gmail.com"} className="button flex flex-col">
-                            <span>contactez-moi</span>
-                            <span className={"w-[150px] h-[50px] text-primary-content"}><Arrow/></span>
+                        <Link href={"mailto:magniendcpierre@gmail.com"} className="button flex flex-row justify-end items-center gap-2">
+                            <span className={'font-sans text-sm'}>contactez-moi</span>
+                            <span className={"w-[30px] h-[50px] text-primary-content"}><Arrow/></span>
                         </Link>
                     </div>
                 </div>
