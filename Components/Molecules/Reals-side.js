@@ -5,7 +5,6 @@ export default function RealsSide({changeShowReals}){
 
     const currentIndex = useContext(ScrollPositionContext)
 
-    console.log(currentIndex)
     return (
                 <button className={`${currentIndex.index >= 1 || (currentIndex.index === 0 && currentIndex.percent > 50) ? 'opacity-1' : 'opacity-0'} transition-opacity duration-700 z-30 flex justify-center gap-4 items-center fixed right-0 top-1/3  hover:scale-105 cursor-pointer`}
                         onClick={changeShowReals}>

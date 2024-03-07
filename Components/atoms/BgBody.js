@@ -4,7 +4,6 @@ import { useContext } from "react";
 
 export default function BgBody() {
     const currentIndex = useContext(ScrollPositionContext)
-    console.log(currentIndex)
     return(
         <div id={'bgbody'} className={'fixed w-full'}>
             <div className={'hero w-full min-h-screen absolute opacity-1 transition-opacity duration-100 ease-in-out'}></div>
