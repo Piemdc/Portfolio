@@ -32,7 +32,8 @@
 @layer components{
     .hero,
     .about,
-    .reals{
+    .reals,
+    .stack{
         @apply bg-cover bg-no-repeat bg-center transition duration-300;
     }
     .hero{
@@ -43,6 +44,9 @@
     }
     .reals{
         background-image:linear-gradient(rgba(75, 73, 75, 0), rgba(0, 0, 0, 0.77)), url(../public/images/bg6img2.png)
+    }
+    .stack{
+        background-image:linear-gradient(rgba(75, 73, 75, 0), rgba(0, 0, 0, 0.77)), url(../public/images/bg6img4.png)
     }
 
     .sideways {
