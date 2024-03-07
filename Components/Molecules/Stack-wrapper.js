@@ -10,7 +10,7 @@ import DOCKER from  '@/public/images/stack/docker.svg'
 export default function StackWrapper(){
 
     return (
-        <div className={'flex flex-row flex-wrap justify-center lg:justify-end gap-8 lg:w-[60%] content-end  h-full'}>
+        <div className={'flex flex-row flex-wrap justify-center lg:justify-end gap-8 2xl:w-[60%] content-end  h-full'}>
             <div className={'w-[100px] text-yellow-400 rounded-md overflow-hidden'}>
                 <JS/>
                 <span className={'sr-only'}>Javascript</span>
