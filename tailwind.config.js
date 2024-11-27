@@ -42,7 +42,7 @@ module.exports = {
       },
       fontFamily : {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-        title: ['Yeseva', ...defaultTheme.fontFamily.sans]
+        title: ['Nunito', ...defaultTheme.fontFamily.sans]
       },
       backdropBlur: {
         xs: '1px',

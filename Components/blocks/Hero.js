@@ -1,13 +1,29 @@
 import Link from "next/link";
 import EMAIL from "@/public/images/email.svg"
+import DIVIDER from "@/public/images/divider.svg"
+import {useEffect, useState} from "react";
+export default function Hero() {
+    const targetWord = 'developer';
+    const [word, setWord] = useState(' '.repeat(targetWord.length));
 
-export default function Hero(){
+    useEffect(() => {
+        targetWord.split('').forEach((correctLetter, index) => {
+            setTimeout(() => {
+                setWord((currentWord) => {
+                    const wordArray = currentWord.split('');
+                    wordArray[index] = correctLetter;
+                    return wordArray.join('');
+                });
+            }, 125 * (index + 1)); // this will queue them up to be one second apart
+        });
+    }, []);
+
 
     return (
-        <section id={"hero"} className={"px-10 pt-[60px] lg:pt-0 w-full min-h-screen text-primary-content" }>
+        <section id={"hero"} className={"px-10 pt-[60px] lg:pt-0 w-full min-h-screen text-primary-content relative" }>
             <div className={"lg:grid grid-cols-2 lg:min-h-screen font-sans uppercase pt-[60px] lg:pt-0"}>
                 <div className={"lg:col-span-1 self-center font-black tracking-tighter lg:text-right mb-10 lg:mb-0 lg:pr-10 lg:border-r-2 relative"}>
-                    <h1 className={"text-5xl lg:text-8xl"}>Frontend developer</h1>
+                    <h1 className={"flex flex-col text-5xl lg:text-8xl"}>Frontend <span>{word}</span></h1>
                 </div>
                 <div className={"lg:col-span-1 lg:text-3xl self-center lg:p-10 font-bold text-left relative"}>
                     <p>Jeune développeur</p>
@@ -20,8 +36,13 @@ export default function Hero(){
                         </Link>
                     </div>
                 </div>
-
             </div>
+            <div className={'w-full h-[20px] absolute left-0 bottom-[40px]'}>
+                <a href={"#about"} className={'block animate-bounce h-[30px] w-[30px] mx-auto'}>
+                    <DIVIDER/>
+                </a>
+            </div>
+
         </section>
     )
 }
