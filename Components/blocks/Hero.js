@@ -27,7 +27,7 @@ export default function Hero() {
                 </div>
                 <div className={"lg:col-span-1 lg:text-3xl self-center lg:p-10 font-bold text-left relative"}>
                     <p>Jeune développeur</p>
-                    <p className={'mb-5 lg:mb-0'}>basé en France,diplômé d&apos;Hetic, en contrat chez <Link href={"https://opus.paris"} target={"_blank"} role={"link"} aria-label={"opus"} className={"text-accent hover:text-accent-focus"}>Opus</Link>. J&apos;aime l&apos;art, la musique, les jeux vidéos et la nature.</p>
+                    <p className={'mb-5 lg:mb-0'}>basé à Bordeaux en France, diplômé d&apos;Hetic en 2023, en contrat chez <Link href={"https://opus.paris"} target={"_blank"} role={"link"} aria-label={"opus"} className={"text-accent hover:text-accent-focus"}>Opus</Link>. J&apos;aime l&apos;art, la musique, les jeux vidéos et la nature.</p>
 
                     <div className={"lg:absolute lg:bottom-[-2em] lg:right-40"}>
                         <Link href={"mailto:magniendcpierre@gmail.com"} className="button flex flex-row justify-end items-center gap-2">
