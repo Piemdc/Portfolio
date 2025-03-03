@@ -7,6 +7,7 @@ import Reals from "@/Components/blocks/Reals";
 import useLockBodyScroll from "@/utils/methods/useLockBodyScrolls";
 import RealsSide from "@/Components/Molecules/Reals-side";
 import Stack from "@/Components/blocks/Stack";
+import SpotifyContainer from "@/Components/blocks/SpotifyContainer";
 
 
 
@@ -19,6 +20,7 @@ export default function Home() {
     useLockBodyScroll(showReals);
 
     // @todo create a provider for this state
+    const SpotifyTrack = process.env.NEXT_PUBLIC_SPOTIFY_TRACK
 
     return (
     <main className="overflow-hidden flex min-h-screen flex-col items-center justify-between relative">
@@ -27,6 +29,7 @@ export default function Home() {
         <Reals showReals={showReals} setShowReals={setShowReals} changeShowReals={changeShowReals}/>
         <RealsSide changeShowReals={changeShowReals}/>
         <Stack/>
+        <SpotifyContainer SpotifyTrack={SpotifyTrack}/>
         {/*<Contact/>*/}
     </main>
   )
