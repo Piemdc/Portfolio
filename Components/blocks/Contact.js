@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
-import { useReCaptcha } from "next-recaptcha-v3";
 
 export default function Contact(EmailJsDatas) {
     const form = useRef();
     const [isSent, setIsSent] = React.useState(false);
     const [isError, setIsError] = React.useState(false);
-    const { executeRecaptcha } = useReCaptcha();
+    const reCaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
     const EmailJsCredentials = EmailJsDatas.EmailJsDatas;
 
@@ -14,19 +13,12 @@ export default function Contact(EmailJsDatas) {
         e.preventDefault();
 
         try {
-            const token = await executeRecaptcha("form_submit");
-            if (!token) {
-                throw new Error("Failed to get reCAPTCHA token");
-            }
 
             const formData = new FormData(form.current);
-            formData.append('g-recaptcha-response', token);
-
             const formObject = {};
             formData.forEach((value, key) => {
                 formObject[key] = value;
             });
-            console.log(formObject)
 
             emailjs.send(EmailJsCredentials.serviceId, EmailJsCredentials.templateId, formObject, EmailJsCredentials.userId)
                 .then((result) => {
@@ -34,6 +26,7 @@ export default function Contact(EmailJsDatas) {
                     setIsSent(true);
                 }, (error) => {
                     console.error("Failed to send email:", error.text);
+                    console.log(error)
                     setIsError(true);
                 });
         } catch (error) {
@@ -62,6 +55,7 @@ export default function Contact(EmailJsDatas) {
                             <label htmlFor='message' className='sr-only'>Message</label>
                             <textarea placeholder='Votre message ici' rows="8" name="message" required className={'bg-white/80 p-2 placeholder:text-neutral'} />
 
+                            <div className="g-recaptcha" data-sitekey={reCaptchaKey}></div>
                             <button type="submit" className={'bg-primary text-white p-2 w-[200px] mx-auto border border-white hover:border-accent transition-colors duration-500'}>Envoyer</button>
                         </form>
                     )}
