@@ -12,6 +12,7 @@
     "@svgr/webpack": "^8.1.0",
     "emailjs-com": "^3.2.0",
     "next": "14.0.4",
+    "next-recaptcha-v3": "^1.5.2",
     "react": "^18",
     "react-dom": "^18"
   },

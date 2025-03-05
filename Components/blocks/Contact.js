@@ -1,22 +1,45 @@
 import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
+import { useReCaptcha } from "next-recaptcha-v3";
 
 export default function Contact(EmailJsDatas) {
     const form = useRef();
     const [isSent, setIsSent] = React.useState(false);
     const [isError, setIsError] = React.useState(false);
+    const { executeRecaptcha } = useReCaptcha();
 
     const EmailJsCredentials = EmailJsDatas.EmailJsDatas;
 
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
 
-        emailjs.sendForm(EmailJsCredentials.serviceId, EmailJsCredentials.templateId, form.current, EmailJsCredentials.userId)
-            .then((result) => {
-                setIsSent(true);
-            }, (error) => {
-                setIsError(true);
+        try {
+            const token = await executeRecaptcha("form_submit");
+            if (!token) {
+                throw new Error("Failed to get reCAPTCHA token");
+            }
+
+            const formData = new FormData(form.current);
+            formData.append('g-recaptcha-response', token);
+
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
             });
+            console.log(formObject)
+
+            emailjs.send(EmailJsCredentials.serviceId, EmailJsCredentials.templateId, formObject, EmailJsCredentials.userId)
+                .then((result) => {
+                    console.log("Email sent successfully:", result.text);
+                    setIsSent(true);
+                }, (error) => {
+                    console.error("Failed to send email:", error.text);
+                    setIsError(true);
+                });
+        } catch (error) {
+            console.error("Error in sendEmail:", error);
+            setIsError(true);
+        }
     };
 
     return (
@@ -30,13 +53,13 @@ export default function Contact(EmailJsDatas) {
 
                     {!isSent && (
                         <form ref={form} onSubmit={sendEmail} className={'flex flex-col gap-4 text-xl text-black'}>
-                            <label for='user_name' className='sr-only'>Nom:</label>
+                            <label htmlFor='user_name' className='sr-only'>Nom:</label>
                             <input placeholder='John Doe' type="text" name="user_name" required className={'bg-white/80 p-2 placeholder:text-neutral'} />
 
-                            <label for='user_email' className='sr-only'>Email:</label>
+                            <label htmlFor='user_email' className='sr-only'>Email:</label>
                             <input placeholder='john@doe.com' type="email" name="user_email" required className={'bg-white/80 p-2 placeholder:text-neutral'} />
 
-                            <label for='message' className='sr-only'>Message</label>
+                            <label htmlFor='message' className='sr-only'>Message</label>
                             <textarea placeholder='Votre message ici' rows="8" name="message" required className={'bg-white/80 p-2 placeholder:text-neutral'} />
 
                             <button type="submit" className={'bg-primary text-white p-2 w-[200px] mx-auto border border-white hover:border-accent transition-colors duration-500'}>Envoyer</button>
@@ -44,7 +67,6 @@ export default function Contact(EmailJsDatas) {
                     )}
                 </div>
             </div>
-
-        </section >
+        </section>
     );
 }
