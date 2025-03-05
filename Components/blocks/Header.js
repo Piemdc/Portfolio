@@ -35,12 +35,12 @@ export default function Header(options) {
             <nav className={'flex flex-row items-center'}>
                 <ul className={'flex flex-row gap-3 items-center h-full'}>
                     <li className="h-full">
-                        <Link role={'link'} target="_blank" href="https://github.com/Piemdc" className="h-full flex items-center text-white hover:text-accent">
+                        <Link role={'link'} target="_blank" href="https://github.com/Piemdc" className="h-full flex items-center text-white transition-colors duration-500 hover:text-accent">
                             <GITHUBLOGO />
                         </Link>
                     </li>
                     <li className={'hidden lg:block'}><Link role={'link'} href="#about">à propos</Link></li>
-                    <li><Link role={'link'} href="mailto:magniendcpierre@gmail.com">contact</Link></li>
+                    <li className={'hidden lg:block'}><Link role={'link'} href="#contact">contact</Link></li>
                 </ul>
             </nav>
         </header >
